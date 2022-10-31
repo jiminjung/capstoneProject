@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <Preference
+        app:title="환경 설정"
+        app:iconSpaceReserved="false"
+        />
+
+    <PreferenceCategory
+        android:title="알림 설정"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="voiceNotifications"
+            app:title="응급 음성 알림 끄기/켜기"
+            android:defaultValue="true"
+            android:summary="음성 감지 알림을 받을 수 있어요."/>
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="abnormalBehaviorDetection"
+            app:title="이상 행동 탐지 알림 끄기/켜기"
+            android:defaultValue="true"
+            android:summary="이상행동 탐지 알림을 받을 수 있어요."/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="회원 관리"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:title="회원 탈퇴"
+            android:key="deleteMember"
+            />
+        />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

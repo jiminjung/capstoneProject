@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.firsttest">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FirstTest">
+
+        <!--> 회원가입 화면 <!-->
+        <activity
+            android:name=".ui.SignUpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FirstTest.NoActionBar" />
+
+        <!--> 로그인 화면 <!-->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FirstTest.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--> 유저리스트 화면 <!-->
+        <activity
+            android:name=".ui.UserListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FirstTest.NoActionBar"
+            />
+
+
+        <!--> 실시간 모니터링 화면 및 응급 화면 <!-->
+        <activity android:name=".ui.EmergencyLiveActivity"
+            android:exported="true"
+            android:theme="@style/Theme.FirstTest.NoActionBar"
+            />
+
+        <!--> 환경 설정 화면 <!-->
+        <activity
+            android:name=".ui.MySettingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FirstTest.Preference"
+        />
+
+        <!--> 이상 행동 다시 보기 저장된 영상 리스트 화면 <!-->
+        <activity android:name=".ui.ReplayListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FirstTest.NoActionBar"/>
+
+        <!--> 이상 행동 다시 보기 영상 플레이어 화면<!-->
+        <activity android:name=".ui.ReplayVideoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FirstTest.NoActionBar"/>
+
+        <!--> FCM SERVICE <!-->
+        <service
+            android:name=".service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!--> Notification channel id for FCM SERVICE <!-->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+    </application>
+</manifest>
